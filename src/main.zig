@@ -112,7 +112,7 @@ pub fn main() !void {
         const full_path_formatted = try std.fmt.allocPrint(allocator, "{s}/src/main.zig", .{user_input});
         defer allocator.free(full_path_formatted); // Free this memory
 
-        std.debug.print("path formatted: {s}\n", .{full_path_formatted});
+        stdout.print("Project Created Successfully: {s}\n", .{full_path_formatted});
 
         // Create file and write content
         var file_create = try std.fs.cwd().createFile(full_path_formatted, .{});
